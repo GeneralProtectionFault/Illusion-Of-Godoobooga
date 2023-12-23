@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnxa4hdhya5ku"]
+
+[ext_resource type="Script" path="res://Scripts/OobaboogaTest.cs" id="1_ti2n0"]
+[ext_resource type="Texture2D" uid="uid://djw82kv5bwh4x" path="res://Graphics/DialogueBackground.png" id="2_2wke0"]
+[ext_resource type="AudioStream" uid="uid://c16ple5vg1hil" path="res://Music/08 Space Beyond Time.mp3" id="2_u4cak"]
+[ext_resource type="FontFile" uid="uid://dxnkrrdew8ee4" path="res://Fonts/LunchtimeDoublySoRegular-D0B3.ttf" id="3_12r3w"]
+[ext_resource type="AudioStream" uid="uid://c16evwoekj1jo" path="res://Music/Cursor.wav" id="3_j0nuq"]
+[ext_resource type="Texture2D" uid="uid://c3hd2bhwt5e7d" path="res://Graphics/DialogueBackground_Input.png" id="3_o0u7g"]
+[ext_resource type="Texture2D" uid="uid://dtf3ijf3upqnp" path="res://Graphics/Menu_Mock.png" id="4_rrmix"]
+[ext_resource type="Texture2D" uid="uid://xbvhc38834i" path="res://Graphics/DarkSpace_Stars1_transparent.png" id="5_ljx47"]
+[ext_resource type="Shader" path="res://Shaders/ScrollingStars.gdshader" id="6_1pmka"]
+[ext_resource type="PackedScene" uid="uid://cb4dxupmsqpie" path="res://Scenes/gaia.tscn" id="10_qb0fx"]
+
+[sub_resource type="FontVariation" id="FontVariation_1qdv3"]
+base_font = ExtResource("3_12r3w")
+
+[sub_resource type="FontVariation" id="FontVariation_480iw"]
+base_font = ExtResource("3_12r3w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dvx7r"]
+shader = ExtResource("6_1pmka")
+shader_parameter/Direction = Vector2(0.8, -1)
+shader_parameter/Speed = 0.3
+
+[node name="Root2D" type="Node2D"]
+script = ExtResource("1_ti2n0")
+
+[node name="DarkSpaceMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u4cak")
+volume_db = -18.286
+autoplay = true
+
+[node name="CursorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j0nuq")
+
+[node name="TextBackdrop" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(966, 749)
+texture = ExtResource("2_2wke0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBackdrop"]
+offset_left = -772.0
+offset_top = -128.0
+offset_right = 774.0
+offset_bottom = 129.0
+theme_override_fonts/normal_font = SubResource("FontVariation_1qdv3")
+theme_override_font_sizes/normal_font_size = 60
+scroll_following = true
+
+[node name="InputBackdrop" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(966, 982)
+texture = ExtResource("3_o0u7g")
+
+[node name="TextInput" type="TextEdit" parent="InputBackdrop"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1581.0
+offset_top = -88.0
+offset_right = -19.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_480iw")
+theme_override_font_sizes/font_size = 60
+wrap_mode = 1
+
+[node name="MenuMock" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(932, 99)
+texture = ExtResource("4_rrmix")
+
+[node name="TextureRect_Stars" type="TextureRect" parent="."]
+z_index = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dvx7r")
+offset_top = -2.0
+offset_right = 1925.0
+offset_bottom = 1075.0
+texture = ExtResource("5_ljx47")
+
+[node name="Gaia" parent="." instance=ExtResource("10_qb0fx")]

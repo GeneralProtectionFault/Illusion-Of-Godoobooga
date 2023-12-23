@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Illusion Of Godoobooga", "Illusion Of Godoobooga.csproj", "{7B99E84B-8B80-44F1-AE55-7C1A601A0753}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{7B99E84B-8B80-44F1-AE55-7C1A601A0753}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
